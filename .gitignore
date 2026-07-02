@@ -1,0 +1,22 @@
+# Data outputs (large / regenerable — share via Google Drive)
+data/outputs/*
+!data/outputs/.gitkeep
+*.tif
+*.tiff
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# Earth Engine / credentials
+*.json.key
+credentials
+.config/earthengine/
+
+# OS
+.DS_Store
+Thumbs.db
