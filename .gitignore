@@ -5,6 +5,10 @@ data/outputs/*
 *.tiff
 *.zip
 
+# Regenerable data downloaded/written by running the notebook locally
+# (paths meant for Colab's /content/ resolve here instead)
+M2_classification/*.geojson
+
 # Python
 __pycache__/
 *.pyc
