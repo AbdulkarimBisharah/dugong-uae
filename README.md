@@ -12,7 +12,8 @@ Built for **Prototypes for Humanity 2026** (Dubai summit, 15–19 Nov 2026; subm
 dugong-uae/
 ├── A_data_gee/          # Track A — GEE data pipeline
 │   └── A2_SetupEnvironment.ipynb   # run first, every session
-├── M2_classification/   # Track B — scikit-learn RF, change detection, accuracy
+├── M2_classification/   # Track B — GEE data pull + Random Forest classification, accuracy
+│   └── Seagrass_Dugong_Mapping.ipynb
 ├── data/
 │   ├── study_area/      # AOI boundary polygon
 │   ├── training/        # labeled seagrass (1) + non-seagrass (0) polygons
@@ -28,8 +29,8 @@ dugong-uae/
 3. Run all cells — it installs libraries, connects Earth Engine, and verifies the data loads with the correct binary class values.
 
 ## Tracks
-- **Track A** — data & GEE pipeline (Sentinel-2 retrieval, cloud/glint correction, feature stack, sample export). *Delivered.*
-- **Track B** — ML: Random Forest classification, change detection, accuracy evaluation. *Starts once `dugong_samples_csv` is available.*
+- **Track A** — data & GEE pipeline (Sentinel-2 retrieval, cloud masking, feature stack). Environment setup *delivered*; the full data pull now runs as part of `M2_classification/Seagrass_Dugong_Mapping.ipynb`.
+- **Track B** — ML: Sentinel-2 feature stack, Random Forest classification (original + class-balanced), accuracy assessment, feature importance, export. `M2_classification/Seagrass_Dugong_Mapping.ipynb` — runs end-to-end in Google Earth Engine, no local CSV hand-off needed.
 - **Track E** — research & writing: competition prompts, PDF, citations, narrative.
 
 ## Data source & attribution
