@@ -1,0 +1,75 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Marawah dugong high-density core",
+    "density": "very_high",
+    "basis": "IMMA/EAD aerial surveys - highest density in the region",
+    "source": "MMPATF Southern Gulf IMMA; EAD 2015"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     53.25,
+     24.28
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Bu Tinah dugong aggregation",
+    "density": "very_high",
+    "basis": "Seagrass + coral core; protected aggregation site",
+    "source": "MMPATF IMMA; EAD"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     53.08,
+     24.63
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Central reserve foraging grounds",
+    "density": "high",
+    "basis": "Extensive Halodule uninervis meadows across the reserve",
+    "source": "dugongseagrass.org UAE; EAD"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     53.15,
+     24.34
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Al Yasat aggregation (regional context)",
+    "density": "high",
+    "basis": "Second-highest density after Marawah - W of study area",
+    "source": "MMPATF IMMA"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     52.05,
+     24.18
+    ]
+   }
+  }
+ ]
+}

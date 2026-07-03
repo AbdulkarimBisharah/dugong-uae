@@ -1,0 +1,74 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Mirfa port (vessel origin)",
+    "type": "port",
+    "intensity": "moderate",
+    "source": "Al Mirfa port"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     53.44,
+     24.12
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Marawah landing",
+    "type": "landing",
+    "intensity": "low",
+    "source": "Marawah I. access point"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     53.27,
+     24.29
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Reserve access / navigation route (schematic)",
+    "type": "nav_channel",
+    "intensity": "moderate",
+    "note": "Indicative route Mirfa -> reserve; schematic, not surveyed",
+    "source": "AD Maritime MPA guide (routes exist through reserve)"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      53.44,
+      24.12
+     ],
+     [
+      53.3,
+      24.2
+     ],
+     [
+      53.18,
+      24.3
+     ],
+     [
+      53.08,
+      24.45
+     ]
+    ]
+   }
+  }
+ ]
+}
