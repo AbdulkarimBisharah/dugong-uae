@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dugong Watch — Habitat Risk Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  html, body { margin: 0; height: 100%; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+  .app-header {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(15, 23, 42, 0.92); color: #f1f5f9;
+    padding: 10px 16px; display: flex; align-items: baseline; gap: 10px;
+    pointer-events: none;
+  }
+  .app-header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  .app-header span { font-size: 12px; color: #94a3b8; }
+
+  .legend {
+    background: white; padding: 10px 12px; border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.3); font-size: 12px; line-height: 1.5;
+    color: #1e293b;
+  }
+  .legend h4 { margin: 0 0 6px; font-size: 12px; }
+  .legend .row { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+  .legend .swatch { width: 14px; height: 14px; border-radius: 2px; display: inline-block; }
+
+  .hotspot-popup { font-size: 13px; line-height: 1.5; }
+  .hotspot-popup b { color: #b91c1c; }
+
+  .leaflet-control-layers { font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <h1>Dugong Watch — Habitat Risk Dashboard</h1>
+  <span>Marawah / Bu Tinah, Abu Dhabi — Track D prototype (D1/D2)</span>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="layers.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
