@@ -5,11 +5,13 @@ server framework — `index.html` + `layers.js` + `app.js` + `data.json`.
 
 ```
 D_dashboard/
-├── index.html   # page shell, loads Leaflet from CDN
-├── layers.js     # Earth Engine tile URLs + risk palette + threat styling
-├── app.js        # map setup, layer control, legend, hotspot popups
-├── data.json     # AOI boundary + threat_data/*.geojson + ranked hotspot table (local, static)
-└── README.md     # this file
+├── index.html      # page shell, loads Leaflet from CDN
+├── layers.js        # Earth Engine tile URLs + risk palette + threat styling
+├── app.js           # map setup, layer control, legend, hotspot popups
+├── data.json        # AOI boundary + threat_data/*.geojson + ranked hotspot table (local, static)
+├── figures/         # D3 — labelled static figures for the write-up (real data)
+├── STYLE_GUIDE.md   # D4 — colors/typography already applied here, as a starting point
+└── README.md        # this file
 ```
 
 ## Running it
@@ -61,10 +63,17 @@ For a durable, non-expiring version: export `dugong_risk_class.tif` etc. as
 static map tiles (or host via a proper Earth Engine App) instead of live
 `getMapId()` tokens.
 
-## What's not in this prototype (still open for Track D)
+## Track D status
 
-- **D3** — labelled static figures for the written report (not yet built here).
-- **D4** — visual identity / branding consistent with the slide deck (colors,
-  fonts) — this prototype uses plain defaults.
-- **D5** — short video walkthrough.
-- **D6** — final polish once Track E's write-up exists to design around.
+- **D1** (pick a format) — done: static Leaflet web map.
+- **D2** (build the dashboard) — done, verified in-browser (see above).
+- **D3** (labelled figures) — `figures/` has 5 real figures from Track B/C's
+  actual numbers (accuracy, feature importance, weight sensitivity, ranked
+  hotspots). Still missing: a before/after seagrass-change map and a plain
+  static export of the risk map itself — see `figures/README.md`.
+- **D4** (visual identity) — `STYLE_GUIDE.md` documents the palette/type
+  already used consistently here, as a starting point (not matched against an
+  actual slide deck, since none was available).
+- **D5** (short video) — not started; needs an actual person recording/editing,
+  not something buildable here.
+- **D6** (final deck polish) — blocked on Track E's write-up existing first.
