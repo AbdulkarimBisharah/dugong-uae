@@ -8,6 +8,7 @@ data/outputs/*
 # Regenerable data downloaded/written by running the notebook locally
 # (paths meant for Colab's /content/ resolve here instead)
 M2_classification/*.geojson
+C_risk_gis/*.csv
 
 # Python
 __pycache__/
