@@ -10,7 +10,8 @@ D_dashboard/
 ├── app.js           # map setup, layer control, legend, hotspot popups
 ├── data.json        # AOI boundary + threat_data/*.geojson + ranked hotspot table (local, static)
 ├── figures/         # D3 — labelled static figures for the write-up (real data)
-├── STYLE_GUIDE.md   # D4 — colors/typography already applied here, as a starting point
+├── deck/            # D4 — starter slide deck (.pptx), built from STYLE_GUIDE.md's palette
+├── STYLE_GUIDE.md   # D4 — colors/typography, established here since no deck existed yet
 └── README.md        # this file
 ```
 
@@ -71,9 +72,17 @@ static map tiles (or host via a proper Earth Engine App) instead of live
   actual numbers (accuracy, feature importance, weight sensitivity, ranked
   hotspots). Still missing: a before/after seagrass-change map and a plain
   static export of the risk map itself — see `figures/README.md`.
-- **D4** (visual identity) — `STYLE_GUIDE.md` documents the palette/type
-  already used consistently here, as a starting point (not matched against an
-  actual slide deck, since none was available).
+- **D4** (visual identity) — no slide deck existed yet, so there was nothing to
+  match — instead, `STYLE_GUIDE.md` establishes the palette/type (used
+  consistently in the dashboard and figures already), and `deck/` has an
+  8-slide starter deck built from it: title, problem statement, 5-track
+  pipeline overview, Track B/C results (real numbers, real figures), model
+  robustness, dashboard overview, and a closing slide. Visually QA'd
+  (rendered to images and checked for overlap/overflow/contrast issues) before
+  finalizing. This becomes the reference for Track E's final submission deck,
+  not the other way around.
 - **D5** (short video) — not started; needs an actual person recording/editing,
   not something buildable here.
-- **D6** (final deck polish) — blocked on Track E's write-up existing first.
+- **D6** (final deck polish) — `deck/Dugong_Watch_Overview.pptx` is a real
+  starting point now, but final polish still needs Track E's actual written
+  content to fill in beyond the overview slides shown here.
