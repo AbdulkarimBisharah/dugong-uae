@@ -1,14 +1,19 @@
-# Visual identity (Track D, D4 — starting point)
+# Visual identity (Track D, D4)
 
-**Caveat:** this isn't matched against an actual slide deck (I don't have
-access to one) — it's the consistent palette/typography already applied
-across the dashboard (`D_dashboard/index.html`) and the report figures
-(`D_dashboard/figures/`), documented so whoever builds the slide deck can
-either adopt it or deliberately deviate.
+**Verified, not assumed:** the colors below were extracted directly from
+`layers.js`, `figures/` (matplotlib), and `deck/build.js` and cross-checked —
+this document matches what's actually shipped, not what was originally
+intended. (An earlier version of this file drifted out of sync with the deck;
+this revision reconciles both.)
 
-## Colors
+There are two layers to this identity, used for different purposes:
 
-**Risk scale (blue → red, colour-blind safe)** — used everywhere risk is shown:
+## 1. Risk ramp — functional, data-driven, do not change lightly
+
+Used everywhere risk/threat data is actually visualized: the dashboard's risk
+layer, every matplotlib figure, and the deck's chart images and legend. This
+is a **hard constraint**, referenced by `RISK_METHODOLOGY.md` — changing it
+means updating the dashboard, all 5 figures, and the deck consistently.
 
 | Class | Hex |
 |---|---|
@@ -18,11 +23,7 @@ either adopt it or deliberately deviate.
 | High | `#fdae61` |
 | Very High | `#d7191c` |
 
-**Text / neutrals:**
-- Dark text: `#0f172a`
-- Secondary text / axis labels: `#475569`
-
-**Threat-layer accent colors** (dashboard + hotspot chart):
+**Threat-layer accent colors** (dashboard threat toggles + hotspot chart):
 
 | Threat | Hex |
 |---|---|
@@ -32,14 +33,54 @@ either adopt it or deliberately deviate.
 | Coastal development | `#f97316` |
 | Vessel pressure | `#7c3aed` |
 
-## Typography
+**Neutral text** (dashboard legend text, chart labels, deck body text — same
+values in both):
 
-System sans-serif stack (`-apple-system, Segoe UI, Roboto, Arial`) — no custom
-font loaded, for zero-dependency portability. Headings bold, body regular.
+| Role | Hex |
+|---|---|
+| Primary text | `#0f172a` |
+| Secondary / muted text | `#475569` |
 
-## Applying this elsewhere (slide deck, PDF)
+## 2. Brand identity — deck-only, not used in the functional dashboard
 
-If Track E's deck uses a different palette, the one hard constraint to keep is
-the **risk 5-class blue→red ramp** — it's referenced in `RISK_METHODOLOGY.md`,
-the dashboard legend, and the figures, so changing it means updating all three
-consistently.
+The dashboard itself has no "theme" beyond the risk ramp + neutrals above —
+it's a functional map UI, not a branded product surface. The deck needed more
+than that (title slides, section backgrounds, cards), so it adds an **Ocean
+Gradient** theme on top, chosen to fit the marine-conservation topic:
+
+| Role | Hex | Used for |
+|---|---|---|
+| Midnight | `#0b1f3a` | Title/closing slide backgrounds |
+| Deep blue | `#065a82` | Primary brand color — process-flow cards, stat callouts |
+| Teal | `#1c7293` | Secondary accent |
+| Ice | `#f4f9fb` | Light content-slide background |
+
+The risk-red (`#d7191c`) doubles as the deck's sharp accent color for stat
+numbers (e.g. "105", "3x" on the Track C slide) — this is the one deliberate
+tie-back between the two layers, so the deck doesn't feel like an unrelated
+document.
+
+**If you extend the dashboard's own visual chrome** (not just its data
+layers) beyond plain functional UI, use this same Ocean Gradient palette
+rather than inventing a third one.
+
+## Typography — different by medium, intentionally
+
+| Medium | Choice | Why |
+|---|---|---|
+| Dashboard (web) | System sans-serif stack (`-apple-system, Segoe UI, Roboto, Arial`) | Zero-dependency, no font loading, portable across any machine viewing the HTML |
+| Deck (PowerPoint) | Cambria (headers) + Calibri (body) | Both ship with Office and render true-to-width in any PDF/QA preview, so text never overflows unexpectedly — a real risk with decorative fonts in `.pptx` |
+| Figures (matplotlib) | Default sans-serif | Matches the dashboard's plain, functional feel |
+
+This isn't an inconsistency to fix — a slide deck and a web page have
+different rendering guarantees, and picking fonts for each medium's actual
+constraints is the correct call, not a shortcut.
+
+## Applying this to Track E's final submission
+
+Per the official Prototypes for Humanity 2026 entry guide, there's no
+required slide deck for submission — the actual deliverable is a
+comprehensive PDF plus supporting images/diagrams. If that PDF or any
+diagrams reuse this project's colors, follow the **risk ramp** above for any
+data visualization, and the **Ocean Gradient** only if you want a cohesive
+"branded" look for section dividers or cover pages.
