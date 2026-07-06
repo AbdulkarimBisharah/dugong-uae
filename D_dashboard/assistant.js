@@ -56,13 +56,16 @@
 
   // ---- data for grounded answers ----
   let biggest = { area_ha: "7,049", dominant_threat: "vessel" };
-  fetch("data.json").then(r => r.json()).then(d => {
+  function _setBiggest(d) {
     const hs = (d.hotspots || []).map(h => ({ a: parseFloat(h.area_ha), t: h.dominant_threat }));
     if (hs.length) {
       const b = hs.reduce((m, h) => (h.a > m.a ? h : m));
       biggest = { area_ha: Math.round(b.a).toLocaleString(), dominant_threat: b.t };
     }
-  }).catch(() => {});
+  }
+  // Use inline data if present (offline / file:// mode), else fetch it.
+  if (window.DW_DATA) _setBiggest(window.DW_DATA);
+  else fetch("data.json").then(r => r.json()).then(_setBiggest).catch(() => {});
 
   // ---- knowledge base (ordered; first match wins) ----
   const KB = [
