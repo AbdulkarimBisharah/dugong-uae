@@ -1,0 +1,43 @@
+digraph system_architecture {
+  rankdir=LR;
+  graph [fontname="Helvetica", label="Dugong Watch — System Architecture", labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.30, ranksep=0.75, splines=spline, pad=0.3];
+  node  [shape=box, style="rounded,filled", fillcolor="white", color="#222222", penwidth=1.1, fontname="Helvetica", fontsize=11, fontcolor="#111111", margin="0.16,0.10"];
+  edge  [color="#333333", penwidth=1.0, arrowsize=0.7];
+
+  subgraph cluster_data {
+    label="  DATA SOURCES  (free / public)  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    s2  [label="Sentinel-2\nsurface reflectance"];
+    ls  [label="Landsat 8/9\nsurface temperature"];
+    ead [label="EAD habitat\nsurvey polygons"];
+  }
+  subgraph cluster_gee {
+    label="  GOOGLE EARTH ENGINE  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    mask [label="Cloud mask +\nannual composite"];
+    feat [label="14-band\nfeature stack"];
+  }
+  subgraph cluster_ml {
+    label="  TRACK B — MACHINE LEARNING  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    rf  [label="Random Forest\nclassifier"];
+    seg [label="Seagrass map +\n2019-2024 change"];
+  }
+  subgraph cluster_risk {
+    label="  TRACK C — RISK MODEL  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    val  [label="Value layer\n(habitat x dugong use)"];
+    thr  [label="Threat layer\n(5 weighted factors)"];
+    risk [label="Risk = Value x Threat", fillcolor="#e9e9e9"];
+    hot  [label="105 ranked\nhotspots"];
+  }
+  subgraph cluster_out {
+    label="  DELIVERY  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    dash [label="Interactive\ndashboard", fillcolor="#2b2b2b", fontcolor="white", color="#2b2b2b"];
+    rep  [label="Report +\nfigures", fillcolor="#2b2b2b", fontcolor="white", color="#2b2b2b"];
+  }
+
+  s2 -> mask;  ead -> rf;
+  mask -> feat -> rf -> seg;
+  seg -> val;  seg -> thr;
+  ls -> thr [style=dashed];
+  val -> risk;  thr -> risk;
+  risk -> hot;
+  hot -> dash;  hot -> rep;
+}

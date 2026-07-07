@@ -1,0 +1,28 @@
+digraph threat_model {
+  rankdir=LR;
+  graph [fontname="Helvetica", label="Track C — Weighted Threat Model", labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.22, ranksep=0.8, pad=0.3];
+  node  [shape=box, style="rounded,filled", fillcolor="white", color="#222222", penwidth=1.1, fontname="Helvetica", fontsize=11, fontcolor="#111111", margin="0.16,0.10"];
+  edge  [color="#333333", penwidth=1.0, arrowsize=0.7, fontname="Helvetica", fontsize=10, fontcolor="#333333"];
+
+  subgraph cluster_f {
+    label="  FIVE THREAT FACTORS  (normalised 0-1)  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    f1 [label="Observed seagrass loss\n(2019 -> 2024)"];
+    f2 [label="Coastal development\n/ dredging"];
+    f3 [label="Thermal stress\n(summer SST)"];
+    f4 [label="Desalination /\nindustrial discharge"];
+    f5 [label="Vessel /\nnavigation pressure"];
+  }
+
+  sum [label="Weighted\nsum", shape=circle, width=0.7, fixedsize=true, fillcolor="#e9e9e9", fontsize=10];
+  out [label="Combined threat\npressure surface (0-1)", fillcolor="#2b2b2b", fontcolor="white", color="#2b2b2b"];
+
+  f1 -> sum [label="0.30"];
+  f2 -> sum [label="0.20"];
+  f3 -> sum [label="0.20"];
+  f4 -> sum [label="0.15"];
+  f5 -> sum [label="0.15"];
+  sum -> out;
+
+  note [label="Distance factors use exp(-d / lambda);\nweights documented in RISK_METHODOLOGY.md", shape=plaintext, style="", fontsize=9, fontcolor="#666666"];
+  out -> note [style=dotted, arrowhead=none, color="#888888"];
+}

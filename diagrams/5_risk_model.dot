@@ -1,0 +1,28 @@
+digraph risk_model {
+  rankdir=LR;
+  graph [fontname="Helvetica", label="Track C — Habitat Risk Model", labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.3, ranksep=0.6, pad=0.3];
+  node  [shape=box, style="rounded,filled", fillcolor="white", color="#222222", penwidth=1.1, fontname="Helvetica", fontsize=11, fontcolor="#111111", margin="0.16,0.10"];
+  edge  [color="#333333", penwidth=1.0, arrowsize=0.7];
+
+  subgraph cluster_val {
+    label="  VALUE  (what is at stake)  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    seg [label="Seagrass\npresence"];
+    dug [label="Dugong-use weight\n0.6 + 0.4 x use"];
+    val [label="Value layer", fillcolor="#e9e9e9"];
+    seg -> val; dug -> val;
+  }
+  subgraph cluster_thr {
+    label="  THREAT  (what acts on it)  "; labeljust=l; style="rounded"; color="#9a9a9a"; fontsize=10; fontcolor="#555555";
+    t5  [label="5 weighted\nthreat factors"];
+    thr [label="Threat layer", fillcolor="#e9e9e9"];
+    t5 -> thr;
+  }
+
+  risk [label="Risk = Value x Threat", fillcolor="#e9e9e9"];
+  norm [label="Rescale 0-1\n(relative risk)"];
+  cls  [label="5 quantile classes\nVery Low -> Very High"];
+  hot  [label="Rank hotspots\n(>= 5 ha)", fillcolor="#2b2b2b", fontcolor="white", color="#2b2b2b"];
+
+  val -> risk; thr -> risk;
+  risk -> norm -> cls -> hot;
+}

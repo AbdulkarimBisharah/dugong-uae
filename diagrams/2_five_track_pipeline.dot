@@ -1,0 +1,30 @@
+digraph pipeline {
+  rankdir=LR;
+  graph [fontname="Helvetica", label="Dugong Watch — Five-Track Pipeline", labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.4, ranksep=0.6, pad=0.3];
+  node  [shape=box, style="rounded,filled", fillcolor="white", color="#222222", penwidth=1.1, fontname="Helvetica", fontsize=11, fontcolor="#111111", margin="0.18,0.12"];
+  edge  [color="#333333", penwidth=1.2, arrowsize=0.8];
+
+  a [label="A\nData & GEE"];
+  b [label="B\nML Classification"];
+  c [label="C\nRisk Modelling"];
+  d [label="D\nDashboard"];
+  e [label="E\nReport & Submission"];
+
+  a -> b -> c -> d -> e;
+
+  node [shape=note, style="filled", fillcolor="#f2f2f2", color="#9a9a9a", penwidth=1.0, fontsize=9.5, fontcolor="#444444", margin="0.14,0.08"];
+  oa [label="Cloud-free composites\n+ feature stack"];
+  ob [label="Seagrass map, 85.3%\n+ 2019-2024 change"];
+  oc [label="Risk index, 5 classes\n+ 105 hotspots"];
+  od [label="Interactive risk map\n+ static figures"];
+  oe [label="Comprehensive PDF\n+ presentation"];
+
+  a -> oa [style=dotted, arrowhead=none];
+  b -> ob [style=dotted, arrowhead=none];
+  c -> oc [style=dotted, arrowhead=none];
+  d -> od [style=dotted, arrowhead=none];
+  e -> oe [style=dotted, arrowhead=none];
+
+  { rank=same; a; b; c; d; e; }
+  { rank=same; oa; ob; oc; od; oe; }
+}
