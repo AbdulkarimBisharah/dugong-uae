@@ -1,8 +1,13 @@
 # diagrams — clean monochrome flow & architecture diagrams
 
 Six black-and-white diagrams of the Dugong Watch project, for the report and
-presentation. Each is provided as an editable Graphviz source (`.dot`), a
-scalable vector (`.svg`), and a high-resolution raster (`.png`).
+presentation. Each is provided in four formats:
+
+- **`.drawio`** — native, editable [diagrams.net](https://app.diagrams.net) file
+  (real shapes and connectors; open it and edit directly)
+- **`.svg`** — scalable vector, stays crisp at any size
+- **`.png`** — high-resolution raster, drop straight into a deck or document
+- **`.dot`** — the Graphviz source the layout was generated from
 
 | # | File | Shows |
 |---|---|---|
