@@ -37,6 +37,8 @@ All vector data uses WGS84/CRS84 coordinates. The binary class scheme
 (`1 = seagrass`, `0 = non-seagrass`) was locked to match this training
 data's own structure, replacing an earlier four-class design.
 
+![Official EAD seagrass reference beds (118 polygons) within the 774.6 km² study area — the ground truth the classifier is trained and validated against.](../D_dashboard/figures/B_ead_seagrass_extent.png)
+
 ## 3.2 Seagrass classification (Track B)
 
 **Feature stack:** each annual composite is reduced to 14 predictor bands —
@@ -62,6 +64,8 @@ The balanced model outperformed the original on every accuracy metric
 any difference in output reflects real change on the ground rather than
 model drift), and the two classified rasters are differenced into four
 categories: stable non-seagrass, stable seagrass, gain, and loss.
+
+![The Track B seagrass-classification workflow, from Sentinel-2 imagery through the 14-band feature stack and Random Forest classifier to a validated seagrass map.](../diagrams/3_classification_workflow.png)
 
 ## 3.3 Habitat-risk model (Track C)
 
@@ -110,6 +114,10 @@ every feature).
 0–1 across the study area, then binned into five ranked classes (Very
 Low → Very High) using quantile breaks computed over seagrass pixels only,
 since non-seagrass pixels have nothing at stake by construction.
+
+![The Track C habitat-risk model: a habitat-value layer multiplied by a weighted threat layer, rescaled, classified, and ranked into hotspots.](../diagrams/5_risk_model.png)
+
+![The weighted threat model: five normalised factors combined in documented proportions into a single threat-pressure surface.](../diagrams/6_threat_model.png)
 
 ## 3.4 Validation approach
 

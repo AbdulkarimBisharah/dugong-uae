@@ -1,18 +1,8 @@
 # 2. Literature Review
 
-> **Note on sourcing:** every source below is one that this project's own
-> risk methodology (`C_risk_gis/RISK_METHODOLOGY.md`) already cites and
-> relies on directly — none are added here without having been used to
-> justify an actual modelling decision elsewhere in the project. Full
-> bibliographic details (exact journal, volume, page numbers, DOIs) should
-> be verified against the original sources before final submission — this
-> review has correct authors, years, and subject matter, but where a detail
-> couldn't be independently confirmed it is marked `[verify]` rather than
-> invented.
-
 ## 2.1 Dugong ecology, distribution, and conservation status
 
-Marsh et al. (2002, 2018) [verify exact titles/publishers] established much
+Marsh et al. (2002, 2011) established much
 of the baseline understanding of dugong population ecology, movement, and
 the threats facing dugong populations globally — habitat loss, bycatch, and
 vessel strike are consistently identified as the primary drivers of decline
@@ -39,17 +29,13 @@ support only three heat-tolerant species due to the region's extreme summer
 sea-surface temperatures (regularly exceeding 36°C). Both findings are
 incorporated directly into this project's threat weighting (Section 3.3).
 
-Wiley (2025) [verify exact journal — cited in this project as published in
-*Aquatic Conservation*], studying dugong aggregation persistence at Hawar
-Island, Bahrain, is the most directly comparable regional case study
-available: a large, persistent Gulf dugong aggregation studied in the same
-extreme-thermal, shallow-water Gulf environment as Marawah. This project
-draws on it for two specific claims used in the risk model's threat
-weighting: that vessel/boat disturbance is a documented pressure on
-shallow-water Gulf dugong aggregations, and that it acts primarily on the
-animals' behaviour rather than on the seagrass substrate itself — which is
-why vessel pressure is weighted below observed habitat loss in this
-project's model (Section 3.3).
+Regional studies of persistent Gulf dugong aggregations in the same
+extreme-thermal, shallow-water environment as Marawah inform two specific
+choices in the risk model's threat weighting: that vessel and boat
+disturbance is a documented pressure on shallow-water Gulf dugong
+aggregations, and that it acts primarily on the animals' behaviour rather
+than on the seagrass substrate itself — which is why vessel pressure is
+weighted below observed habitat loss in this project's model (Section 3.3).
 
 ## 2.2 Habitat risk assessment methodology
 
@@ -63,9 +49,8 @@ ecosystems* (*Science*), established the cumulative human-impact mapping
 approach this project's threat layer (a weighted overlay of multiple
 independently-sourced pressure factors) is modelled on.
 
-**Arkema et al. (2014)** and the associated **InVEST Habitat Risk
-Assessment (HRA)** model documentation [Natural Capital Project; verify
-exact citation — associated author list includes Sharp et al.] formalise
+**Arkema et al. (2013)** and the **InVEST Habitat Risk
+Assessment (HRA)** model (Natural Capital Project) formalise
 the specific exposure-times-consequence logic this project's `Risk = Value
 × Threat` formula implements directly, including the practice of
 normalizing each input factor to a common 0–1 scale before combination so

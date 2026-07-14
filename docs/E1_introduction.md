@@ -2,6 +2,11 @@
 
 ## 1.1 Background
 
+A dugong can live for up to seventy years, and will spend almost all of them
+doing a single thing: grazing seagrass in shallow coastal water. Remove the
+seagrass and the animal has nowhere left to feed. That absolute dependency —
+one animal, one habitat — is what this project sets out to protect.
+
 The dugong (*Dugong dugon*) is a marine mammal whose survival is bound
 almost entirely to a single resource: seagrass. Dugongs feed nearly
 exclusively on seagrass meadows, and the Arabian Gulf population — centred
@@ -62,6 +67,8 @@ sophistication**: every weight in the risk model is a documented, justified
 parameter rather than a black box, every threat layer's provenance is
 labelled as real-coordinate or schematic, and the model's own sensitivity to
 its assumptions is tested and reported rather than assumed.
+
+![System architecture: free satellite imagery and official survey data flow through Google Earth Engine into a machine-learning classifier and a weighted risk model, producing a ranked, auditable output delivered as an interactive dashboard and report.](../diagrams/1_system_architecture.png)
 
 ## 1.4 Scope
 

@@ -54,6 +54,8 @@ produced:
 
 ![Ranked risk hotspots by area, coloured by dominant threat](../D_dashboard/figures/C4_hotspot_ranking.png)
 
+![The habitat-risk map across the study area (blue = Very Low → red = Very High), with ranked hotspot markers on the interactive dashboard. The red corridor through the centre is the vessel-dominated navigation channel.](../D_dashboard/risk_map_static.png)
+
 ## 4.3 Model validation
 
 **Face validity:** mean risk fell from approximately 0.26 near the nearest

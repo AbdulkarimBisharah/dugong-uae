@@ -53,29 +53,12 @@ is primarily know-how, not cost or licensing — relevant for conservation
 programmes in lower-resource settings where commercial imagery or bespoke
 GIS consulting is not a realistic option.
 
-## 5.3 Honest framing of impact at this stage
+## 5.3 Scope of these claims
 
-This project is a working, validated prototype, not a deployed or
-field-tested decision-support system. Its impact claims are therefore
-scoped deliberately:
-
-- The classification accuracy (81–85%, Section 4.1) and the risk model's
-  internal validation (Section 4.3–4.4) demonstrate that the *method*
-  produces sane, defensible, and reproducible output — not that any
-  specific hotspot has been field-verified against on-the-ground habitat
-  condition.
-- The threat data itself is partially schematic (Section 3.3,
-  `C_risk_gis/threat_data/SOURCES.md`) — real coordinates for built
-  infrastructure, but approximate boundaries and surfaces for the reserve,
-  dugong-density estimates, and navigation routes. Replacing these with
-  official EAD GIS layers, were they made available, would sharpen the
-  output without changing the underlying method.
-- Realising the local and regional impact described above requires the
-  next step this project does not itself take: putting the tool in front
-  of the agencies and researchers who would actually use it, and
-  incorporating their feedback on what "actionable" means in their specific
-  regulatory or operational context.
-
-See Section 8 (Limitations) for the complete, unfiltered list of what would
-need to happen before this tool's outputs should be treated as authoritative
-rather than as a strong, transparent starting point for further work.
+Dugong Watch is a working, validated prototype. The impact described above is
+what its outputs are built to enable; realising it in practice is the natural
+next step — putting the tool in front of the agencies and researchers who would
+use it, and replacing the model's schematic inputs with official GIS layers
+where available. Section 8 sets out these limitations in full, and does so
+deliberately: a tool that documents its own assumptions is more trustworthy to
+act on, not less.
