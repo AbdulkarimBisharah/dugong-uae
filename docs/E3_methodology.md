@@ -6,6 +6,8 @@ summarised here; every number in this section is drawn directly from
 `C_risk_gis/Dugong_Habitat_Risk.ipynb` / `RISK_METHODOLOGY.md` (risk model),
 both of which have been run against live data and verified.
 
+![The five-track pipeline: each track (A–E) hands its output to the next, from data acquisition through machine learning, risk modelling, the dashboard, and this report.](../diagrams/2_five_track_pipeline.png)
+
 ## 3.1 Study area and data
 
 The study area is a 774.6 km² polygon covering the Marawah / Bu Tinah
@@ -66,6 +68,8 @@ model drift), and the two classified rasters are differenced into four
 categories: stable non-seagrass, stable seagrass, gain, and loss.
 
 ![The Track B seagrass-classification workflow, from Sentinel-2 imagery through the 14-band feature stack and Random Forest classifier to a validated seagrass map.](../diagrams/3_classification_workflow.png)
+
+![Change detection: the same trained classifier is applied to the 2019 and 2024 composites and the two maps are differenced into four change classes — stable non-seagrass, stable seagrass, gain, and loss.](../diagrams/4_change_detection.png)
 
 ## 3.3 Habitat-risk model (Track C)
 

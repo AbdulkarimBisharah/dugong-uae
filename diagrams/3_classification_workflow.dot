@@ -1,6 +1,6 @@
 digraph classification {
   rankdir=TB;
-  graph [fontname="Helvetica", label="Track B — Seagrass Classification Workflow", labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.35, ranksep=0.45, pad=0.3];
+  graph [fontname="Helvetica", label=<<b>Track B — Seagrass Classification Workflow</b><br/><font point-size="9" color="#888888">&#169; 2026 Dugong Watch &#183; Copyright ID: LY2026wo4941</font>>, labelloc=t, fontsize=15, fontcolor="#111111", bgcolor="white", nodesep=0.35, ranksep=0.45, pad=0.3];
   node  [shape=box, style="rounded,filled", fillcolor="white", color="#222222", penwidth=1.1, fontname="Helvetica", fontsize=11, fontcolor="#111111", margin="0.16,0.10"];
   edge  [color="#333333", penwidth=1.0, arrowsize=0.7];
 
